@@ -3,20 +3,21 @@
    You'll enhance the layout further using Bootstrap during the LiveLab.
 */
 
-/* Set a soft textured background for the whole page */
+/* Set the page background and text color using Bootstrap variables */
 body {
-  background-image: url('assets/offwhite-background.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: var(--bs-light);   /* Light background */
+  color: var(--bs-dark);               /* Dark text for contrast */
   font-family: sans-serif;
-  padding: 16px; /* Adds space around edges on small screens */
+  padding: 16px;
+  background-image: none;              /* Remove textured background for clarity */
 }
 
-/* Header polish */
+/* Header polish using Bootstrap primary color */
 h1 {
   padding: 8px;
   border-radius: 4px;
+  background-color: var(--bs-primary); /* Bright primary color */
+  color: var(--bs-light);              /* Light text */
 }
 
 /* Limit image dimensions so tiles don’t overflow the layout */
@@ -25,20 +26,28 @@ img {
   max-width: 250px;
 }
 
-/* Optional decorative border for each tile */
+/* Decorative border for each tile using Bootstrap variables */
 .border-tile {
-  border: 20px solid transparent;
+  border: 10px solid transparent;
   border-image: url('assets/wood.jpg') 30 round;
   padding: 5px;
-  background-color: white;
+  background-color: var(--bs-light);   /* White tile background */
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-color: var(--bs-primary);     /* Fallback border color */
 }
 
-/* Optional caption style if you add labels under your tiles */
+/* Hover effect for tiles */
+.border-tile:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* Caption style using Bootstrap primary color */
 .tile-caption {
   text-align: center;
   margin-top: 8px;
   font-size: 14px;
-  color: #444;
+  color: var(--bs-primary);
 }
 
 /* 💡 Optional Enhancements:
